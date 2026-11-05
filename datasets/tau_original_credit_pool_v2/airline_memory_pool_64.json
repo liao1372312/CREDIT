@@ -1,0 +1,4285 @@
+[
+  {
+    "uid": "413cb1ceca50751c",
+    "text": "Verified airline workflow: get_user_details(user_id) -> list_all_airports() -> search_direct_flight(date,destination,origin) -> search_onestop_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "book_reservation",
+      "get_user_details",
+      "list_all_airports",
+      "search_direct_flight",
+      "search_onestop_flight"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "list_all_airports",
+        "argument_keys": []
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 158,
+    "source_workload": "airline",
+    "source_task_id": 0,
+    "source_family_id": "airline:task-0",
+    "source_episode_id": "sonnet-35-new:task0:trial4",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 4,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "4b84a1781c2be871a6aebe951fda7312cec2ae7f1b0bc3576ce8ac789647bc5c"
+  },
+  {
+    "uid": "bc8dbc1613198fb8",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> cancel_reservation(reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_reservation",
+      "get_reservation_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "cancel_reservation",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 69,
+    "source_workload": "airline",
+    "source_task_id": 1,
+    "source_family_id": "airline:task-1",
+    "source_episode_id": "gpt-4o:task1:trial1",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "9627e3440a0c22a74ef039a3e0018ccef90320fa8f209e31e4ae4a4a5bfd6b52"
+  },
+  {
+    "uid": "cefbbf2ce5664a3f",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> calculate(expression). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "calculate",
+      "get_reservation_details",
+      "get_user_details",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      }
+    ],
+    "tokens": 175,
+    "source_workload": "airline",
+    "source_task_id": 2,
+    "source_family_id": "airline:task-2",
+    "source_episode_id": "gpt-4o:task2:trial2",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "5a54d360c482d1bd5eb0b5c5570f82829e9e46423b088f162240b1b3328212f4"
+  },
+  {
+    "uid": "2c0f1c331e3e7ade",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> update_reservation_passengers(passengers,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_baggages(nonfree_baggages,payment_id,reservation_id,total_baggages). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "update_reservation_baggages",
+      "update_reservation_flights",
+      "update_reservation_passengers"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_passengers",
+        "argument_keys": [
+          "passengers",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_baggages",
+        "argument_keys": [
+          "nonfree_baggages",
+          "payment_id",
+          "reservation_id",
+          "total_baggages"
+        ]
+      }
+    ],
+    "tokens": 104,
+    "source_workload": "airline",
+    "source_task_id": 5,
+    "source_family_id": "airline:task-5",
+    "source_episode_id": "gpt-4o:task5:trial1",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "effd1280951e8f1320db2bd556d3ab2e4e97b6f6248acd37ef872a2def09e7de"
+  },
+  {
+    "uid": "4bdbfaaf424fe501",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> search_onestop_flight(date,destination,origin) -> think(thought) -> calculate(expression) -> update_reservation_flights(cabin,flights,payment_id,reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "calculate",
+      "get_reservation_details",
+      "get_user_details",
+      "search_onestop_flight",
+      "think",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 84,
+    "source_workload": "airline",
+    "source_task_id": 6,
+    "source_family_id": "airline:task-6",
+    "source_episode_id": "gpt-4o:task6:trial0",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "00f07db7cebc467d51e3141b9a445b46588616b5f4059059830b1483023f7568"
+  },
+  {
+    "uid": "c16328da7823bff1",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> think(thought) -> calculate(expression) -> calculate(expression) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id) -> think(thought) -> calculate(expression) -> think(thought) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "book_reservation",
+      "calculate",
+      "get_reservation_details",
+      "get_user_details",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 145,
+    "source_workload": "airline",
+    "source_task_id": 11,
+    "source_family_id": "airline:task-11",
+    "source_episode_id": "gpt-4o:task11:trial0",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "d8ee0d67340ac3f7bac819c4b99f254312b4ad3aee00284e22411b8958869469"
+  },
+  {
+    "uid": "ea3d3598cd6763a6",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 46,
+    "source_workload": "airline",
+    "source_task_id": 12,
+    "source_family_id": "airline:task-12",
+    "source_episode_id": "gpt-4o:task12:trial0",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "f19cc055b7203d9b6f6d3928ff3ce5a76d0fe2232e797c634d626f9ee95a17aa"
+  },
+  {
+    "uid": "2ed5fb700cd2d9f4",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> search_direct_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> search_onestop_flight(date,destination,origin). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "search_direct_flight",
+      "search_onestop_flight",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      }
+    ],
+    "tokens": 88,
+    "source_workload": "airline",
+    "source_task_id": 13,
+    "source_family_id": "airline:task-13",
+    "source_episode_id": "gpt-4o:task13:trial1",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "0941cc3feff7f48b075499a55cdf021ec656dce0974ca38c1df245ce34f81e2d"
+  },
+  {
+    "uid": "a70bead1a077ba0a",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> search_onestop_flight(date,destination,origin) -> update_reservation_baggages(nonfree_baggages,payment_id,reservation_id,total_baggages). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "search_onestop_flight",
+      "update_reservation_baggages"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "update_reservation_baggages",
+        "argument_keys": [
+          "nonfree_baggages",
+          "payment_id",
+          "reservation_id",
+          "total_baggages"
+        ]
+      }
+    ],
+    "tokens": 80,
+    "source_workload": "airline",
+    "source_task_id": 14,
+    "source_family_id": "airline:task-14",
+    "source_episode_id": "sonnet-35-new:task14:trial0",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "908957a6d7dcc0a8ca71f65392a596cf7eb45c37187d8637ee7096519bc11b38"
+  },
+  {
+    "uid": "4bc77a8f505a832a",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 63,
+    "source_workload": "airline",
+    "source_task_id": 15,
+    "source_family_id": "airline:task-15",
+    "source_episode_id": "gpt-4o:task15:trial2",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "4624f709460f61be2b8cf68034be0daf543b08487f529d8a0a3b1602193b1b12"
+  },
+  {
+    "uid": "8f1b6ee4384ec5f8",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> send_certificate(amount,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "send_certificate"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "send_certificate",
+        "argument_keys": [
+          "amount",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 117,
+    "source_workload": "airline",
+    "source_task_id": 16,
+    "source_family_id": "airline:task-16",
+    "source_episode_id": "gpt-4o:task16:trial3",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 3,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "998f2ecd07c3e45ee43cc14807823252b4131e4521353ef8bcbc4f0dcd5f00b0"
+  },
+  {
+    "uid": "dd043d3d41ecf45d",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 46,
+    "source_workload": "airline",
+    "source_task_id": 18,
+    "source_family_id": "airline:task-18",
+    "source_episode_id": "gpt-4o:task18:trial2",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "118bba535436460b56239b75e911ee098d761b22b62dc081434ad90591fa0311"
+  },
+  {
+    "uid": "1db63dadb67c51cc",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin) -> update_reservation_flights(cabin,flights,payment_id,reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "search_direct_flight",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 66,
+    "source_workload": "airline",
+    "source_task_id": 20,
+    "source_family_id": "airline:task-20",
+    "source_episode_id": "gpt-4o:task20:trial0",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "bd94af85302a838ba097c1eada705305cdace621db0323a8c5399c4bd24fe47f"
+  },
+  {
+    "uid": "a6ca4b0b249efd97",
+    "text": "Verified airline workflow: search_direct_flight(date,destination,origin) -> search_onestop_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> search_onestop_flight(date,destination,origin) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "search_direct_flight",
+      "search_onestop_flight",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 102,
+    "source_workload": "airline",
+    "source_task_id": 21,
+    "source_family_id": "airline:task-21",
+    "source_episode_id": "sonnet-35-new:task21:trial5",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 5,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "a3175dbc1470a52be3ab0a63aeaa09aad5dd760ac1d38f9965078465674d3245"
+  },
+  {
+    "uid": "6537e441b6f3b1a7",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> think(thought) -> cancel_reservation(reservation_id) -> get_reservation_details(reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> get_user_details(user_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_reservation",
+      "get_reservation_details",
+      "get_user_details",
+      "think",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "cancel_reservation",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 108,
+    "source_workload": "airline",
+    "source_task_id": 26,
+    "source_family_id": "airline:task-26",
+    "source_episode_id": "gpt-4o:task26:trial0",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "6d031425585b33b260422aa0b083566e7815457e6c29829f3abae1e01a84be77"
+  },
+  {
+    "uid": "c989003d8e788686",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> think(thought) -> cancel_reservation(reservation_id) -> get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_reservation",
+      "get_reservation_details",
+      "search_direct_flight",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "cancel_reservation",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      }
+    ],
+    "tokens": 77,
+    "source_workload": "airline",
+    "source_task_id": 27,
+    "source_family_id": "airline:task-27",
+    "source_episode_id": "gpt-4o:task27:trial1",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "6ca2530e3f08db31cda11f565baab8a6584231c3543d9576c8ba751ddef71b6e"
+  },
+  {
+    "uid": "3d5c262a1e996fe0",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 101,
+    "source_workload": "airline",
+    "source_task_id": 29,
+    "source_family_id": "airline:task-29",
+    "source_episode_id": "sonnet-35-new:task29:trial1",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "640bca60df62e3b8e6a0b4c397d03471cbf3962e97873aabde60a3b8c27666e7"
+  },
+  {
+    "uid": "78dd6751c43d32a0",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> cancel_reservation(reservation_id) -> cancel_reservation(reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_reservation",
+      "get_reservation_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "cancel_reservation",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "cancel_reservation",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 108,
+    "source_workload": "airline",
+    "source_task_id": 30,
+    "source_family_id": "airline:task-30",
+    "source_episode_id": "gpt-4o:task30:trial1",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "8b0a56a7aadc93accc331c5836a30db5c4fac7c405a4483c054846536e4166df"
+  },
+  {
+    "uid": "1fa1bf3266599d29",
+    "text": "Verified airline workflow: get_user_details(user_id) -> search_direct_flight(date,destination,origin) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id) -> search_direct_flight(date,destination,origin) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "book_reservation",
+      "get_user_details",
+      "search_direct_flight"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 130,
+    "source_workload": "airline",
+    "source_task_id": 32,
+    "source_family_id": "airline:task-32",
+    "source_episode_id": "sonnet-35-new:task32:trial3",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 3,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "26675deefcfb93e81d7e5e2bee453f1a353025851101f39133406efb70d640f1"
+  },
+  {
+    "uid": "1a270a540094341a",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 39,
+    "source_workload": "airline",
+    "source_task_id": 35,
+    "source_family_id": "airline:task-35",
+    "source_episode_id": "gpt-4o:task35:trial0",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "4f2f4b0d2c678fed50163abb310a240db84c7bae8e50ed60142f3f68c6ed886a"
+  },
+  {
+    "uid": "0feba359db18ae0a",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 55,
+    "source_workload": "airline",
+    "source_task_id": 36,
+    "source_family_id": "airline:task-36",
+    "source_episode_id": "sonnet-35-new:task36:trial0",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "be31717cfc482d76a65ae53e2d61bf2c0f99e8551f9ba3b5d298fcf08326e2b3"
+  },
+  {
+    "uid": "4fb36b18e7851d84",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> think(thought) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "think",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 58,
+    "source_workload": "airline",
+    "source_task_id": 39,
+    "source_family_id": "airline:task-39",
+    "source_episode_id": "sonnet-35-new:task39:trial7",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 7,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "68aa35e4e7a9b35fc6617c7e5c0910e903395f83bdd66c17c730452b7764f56b"
+  },
+  {
+    "uid": "a12dff1ca690a4d1",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 85,
+    "source_workload": "airline",
+    "source_task_id": 40,
+    "source_family_id": "airline:task-40",
+    "source_episode_id": "gpt-4o:task40:trial0",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "545f042fa1e54de9b956b33b5b89586e6fe02c7d1b092c64690dc2de8ebd994f"
+  },
+  {
+    "uid": "7729234a8af5ba2d",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> think(thought) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "think",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 51,
+    "source_workload": "airline",
+    "source_task_id": 41,
+    "source_family_id": "airline:task-41",
+    "source_episode_id": "gpt-4o:task41:trial1",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "3c725cccea68281bc1e8b03eb8bcdcce6ef418d0588c87ef27ed5fd1e9517ef1"
+  },
+  {
+    "uid": "439db203e18990d2",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> think(thought) -> get_reservation_details(reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "think",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 66,
+    "source_workload": "airline",
+    "source_task_id": 42,
+    "source_family_id": "airline:task-42",
+    "source_episode_id": "sonnet-35-new:task42:trial2",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "d218be611ce199550ab80e6bd748bc969293aba84394e501ce56e878792dcca3"
+  },
+  {
+    "uid": "2d98fa9ba18bcfe9",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 46,
+    "source_workload": "airline",
+    "source_task_id": 44,
+    "source_family_id": "airline:task-44",
+    "source_episode_id": "gpt-4o:task44:trial0",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "cf75a7f9109503d693d0d450bc060151b89374af8fb26e3f9f7e3a87db78cb82"
+  },
+  {
+    "uid": "185c62dc35e44f5e",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> think(thought) -> send_certificate(amount,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "send_certificate",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "send_certificate",
+        "argument_keys": [
+          "amount",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 58,
+    "source_workload": "airline",
+    "source_task_id": 45,
+    "source_family_id": "airline:task-45",
+    "source_episode_id": "gpt-4o:task45:trial0",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "fd1326d207349a717bebcb05e2f93379ba0af71f84a6dca02bbf73d7e97877d6"
+  },
+  {
+    "uid": "bfab322d019c93bb",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> get_reservation_details(reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 61,
+    "source_workload": "airline",
+    "source_task_id": 49,
+    "source_family_id": "airline:task-49",
+    "source_episode_id": "gpt-4o:task49:trial2",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "34db8cac171ee6eb34a218a77992cb366ec6f3fd75dc2c6a755060ba9db8cc89"
+  },
+  {
+    "uid": "89a457af2e08a031",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> cancel_reservation(reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_reservation",
+      "get_reservation_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "cancel_reservation",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 76,
+    "source_workload": "airline",
+    "source_task_id": 1,
+    "source_family_id": "airline:task-1",
+    "source_episode_id": "sonnet-35-new:task1:trial4",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 4,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "457c16b02554c7530791f86d60fbd1e40dcebfd8956cbef45a53c4e537996fdf"
+  },
+  {
+    "uid": "da0db476d118aa13",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 171,
+    "source_workload": "airline",
+    "source_task_id": 2,
+    "source_family_id": "airline:task-2",
+    "source_episode_id": "sonnet-35-new:task2:trial0",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "3d0a9371adc6e6b13187207ddabcea1ee2a0030f0b8b2253804dc61633a6bd33"
+  },
+  {
+    "uid": "9afda397548cf4d2",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> update_reservation_passengers(passengers,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_baggages(nonfree_baggages,payment_id,reservation_id,total_baggages). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "update_reservation_baggages",
+      "update_reservation_flights",
+      "update_reservation_passengers"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_passengers",
+        "argument_keys": [
+          "passengers",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_baggages",
+        "argument_keys": [
+          "nonfree_baggages",
+          "payment_id",
+          "reservation_id",
+          "total_baggages"
+        ]
+      }
+    ],
+    "tokens": 120,
+    "source_workload": "airline",
+    "source_task_id": 5,
+    "source_family_id": "airline:task-5",
+    "source_episode_id": "sonnet-35-new:task5:trial0",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "c7f59c884b4433eecf77533aa4a06f9d959133d9f494c6bd19fc304b00208d53"
+  },
+  {
+    "uid": "28526e130b3eb3d1",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin) -> search_onestop_flight(date,destination,origin) -> update_reservation_flights(cabin,flights,payment_id,reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "search_direct_flight",
+      "search_onestop_flight",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 93,
+    "source_workload": "airline",
+    "source_task_id": 6,
+    "source_family_id": "airline:task-6",
+    "source_episode_id": "sonnet-35-new:task6:trial2",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "7c7a8dbdbc8f4c39d4b197c0ba2f853ee291348403e70723cc8bf85e60d83b30"
+  },
+  {
+    "uid": "2031a5200df3f9b0",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> calculate(expression) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id) -> calculate(expression) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "book_reservation",
+      "calculate",
+      "get_reservation_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 126,
+    "source_workload": "airline",
+    "source_task_id": 11,
+    "source_family_id": "airline:task-11",
+    "source_episode_id": "sonnet-35-new:task11:trial6",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 6,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "df5a18933a6fd0d85b1ed67fa178191a5315c2616d719d2c84afbf53bb6147bd"
+  },
+  {
+    "uid": "b5780e2ed5c6d6e9",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 53,
+    "source_workload": "airline",
+    "source_task_id": 12,
+    "source_family_id": "airline:task-12",
+    "source_episode_id": "gpt-4o:task12:trial1",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "751c5b46301f9c990a3fa492f6704106bee8e9b20f6a4e0de1986b0c405c1a76"
+  },
+  {
+    "uid": "8b3baaea14ba3584",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> search_direct_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> search_onestop_flight(date,destination,origin) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "search_direct_flight",
+      "search_onestop_flight",
+      "transfer_to_human_agents",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 146,
+    "source_workload": "airline",
+    "source_task_id": 13,
+    "source_family_id": "airline:task-13",
+    "source_episode_id": "gpt-4o:task13:trial2",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "d82d13cda7aebce48b0ba6236f9677019221a301e2c1d960f7d907ca51e73d02"
+  },
+  {
+    "uid": "a8828f00656bbe1d",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> search_onestop_flight(date,destination,origin) -> calculate(expression) -> update_reservation_baggages(nonfree_baggages,payment_id,reservation_id,total_baggages). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "calculate",
+      "get_reservation_details",
+      "get_user_details",
+      "search_onestop_flight",
+      "update_reservation_baggages"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "update_reservation_baggages",
+        "argument_keys": [
+          "nonfree_baggages",
+          "payment_id",
+          "reservation_id",
+          "total_baggages"
+        ]
+      }
+    ],
+    "tokens": 84,
+    "source_workload": "airline",
+    "source_task_id": 14,
+    "source_family_id": "airline:task-14",
+    "source_episode_id": "sonnet-35-new:task14:trial2",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "fbc27f123077398f1207961d69d1fe05384913c2f0f02eedfcaa545a7e338cf4"
+  },
+  {
+    "uid": "9917e781c1322ca5",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 79,
+    "source_workload": "airline",
+    "source_task_id": 15,
+    "source_family_id": "airline:task-15",
+    "source_episode_id": "gpt-4o:task15:trial3",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 3,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "1fc3ec6370287d6ef51997292a0374b90e4bbe2eb96f3a4c5f3529853aa861f3"
+  },
+  {
+    "uid": "59e68048fc340400",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> send_certificate(amount,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "send_certificate"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "send_certificate",
+        "argument_keys": [
+          "amount",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 77,
+    "source_workload": "airline",
+    "source_task_id": 16,
+    "source_family_id": "airline:task-16",
+    "source_episode_id": "sonnet-35-new:task16:trial2",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "acd317b7a6b8c1250709d8d1ffa0070daa579e1a2a96ab33f000806015af4718"
+  },
+  {
+    "uid": "fcb73eedbb8a2595",
+    "text": "Verified airline workflow: transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 38,
+    "source_workload": "airline",
+    "source_task_id": 18,
+    "source_family_id": "airline:task-18",
+    "source_episode_id": "gpt-4o:task18:trial3",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 3,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "444908ff84cb5d5cbf980528c6fdbb94125383040b985a33e203fd6850259b95"
+  },
+  {
+    "uid": "05188e491919373c",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> get_user_details(user_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "search_direct_flight",
+      "transfer_to_human_agents",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 114,
+    "source_workload": "airline",
+    "source_task_id": 20,
+    "source_family_id": "airline:task-20",
+    "source_episode_id": "gpt-4o:task20:trial1",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "ef837ab36f03d30943e4fd2ad66b50fcf757a16a411d5a1f524fd9b97ce4c8f9"
+  },
+  {
+    "uid": "f8884fda9c76e981",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> search_onestop_flight(date,destination,origin) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "search_direct_flight",
+      "search_onestop_flight",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 111,
+    "source_workload": "airline",
+    "source_task_id": 21,
+    "source_family_id": "airline:task-21",
+    "source_episode_id": "sonnet-35-new:task21:trial6",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 6,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "6b4b11baef28d393a632744d97a6f1fbbf1769246daad1bcee781176fc816d8c"
+  },
+  {
+    "uid": "0bc4d78c7780f505",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> think(thought) -> cancel_reservation(reservation_id) -> get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> calculate(expression) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> get_user_details(user_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "calculate",
+      "cancel_reservation",
+      "get_reservation_details",
+      "get_user_details",
+      "search_direct_flight",
+      "think",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "cancel_reservation",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 132,
+    "source_workload": "airline",
+    "source_task_id": 26,
+    "source_family_id": "airline:task-26",
+    "source_episode_id": "gpt-4o:task26:trial2",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "dc533c630d1f87808773bdf5cef08c6c6a866074dd5b462d2e177872845534d9"
+  },
+  {
+    "uid": "7e92ddef487219c2",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> cancel_reservation(reservation_id) -> get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_reservation",
+      "get_reservation_details",
+      "search_direct_flight"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "cancel_reservation",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      }
+    ],
+    "tokens": 72,
+    "source_workload": "airline",
+    "source_task_id": 27,
+    "source_family_id": "airline:task-27",
+    "source_episode_id": "sonnet-35-new:task27:trial5",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 5,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "c743475c0bc18f3d26527cc26e1f3d79b4cb64ced47c59642b81e0e391cc58e4"
+  },
+  {
+    "uid": "8acd984ec5c2bdf4",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 94,
+    "source_workload": "airline",
+    "source_task_id": 29,
+    "source_family_id": "airline:task-29",
+    "source_episode_id": "sonnet-35-new:task29:trial4",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 4,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "546d0b590c41db7a8fe3ccc3813f5e179f32d8775a95abbd3409081711013294"
+  },
+  {
+    "uid": "39b677091779e7c5",
+    "text": "Verified airline workflow: search_direct_flight(date,destination,origin) -> get_user_details(user_id) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "book_reservation",
+      "get_user_details",
+      "search_direct_flight"
+    ],
+    "tool_chain": [
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 120,
+    "source_workload": "airline",
+    "source_task_id": 32,
+    "source_family_id": "airline:task-32",
+    "source_episode_id": "sonnet-35-new:task32:trial5",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 5,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "b6e5d30834253856191936fa5c59e7229861dadb30ec510cedfb935bee7f1985"
+  },
+  {
+    "uid": "a37f2904ac4ebc4b",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> search_onestop_flight(date,destination,origin). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "search_onestop_flight"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      }
+    ],
+    "tokens": 51,
+    "source_workload": "airline",
+    "source_task_id": 35,
+    "source_family_id": "airline:task-35",
+    "source_episode_id": "sonnet-35-new:task35:trial6",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 6,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "6986de7b1c5e175ab888723195d9c835db9649bd885fe0d3fbfe0d7a0e934f1c"
+  },
+  {
+    "uid": "2aacb3856342332a",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 77,
+    "source_workload": "airline",
+    "source_task_id": 36,
+    "source_family_id": "airline:task-36",
+    "source_episode_id": "sonnet-35-new:task36:trial4",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 4,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "b48e12fc5b0ed7973ca641bccd36426198de7fbb010cce66a7dbd2bbb778d292"
+  },
+  {
+    "uid": "3eaff8808140c1d1",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> think(thought). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      }
+    ],
+    "tokens": 83,
+    "source_workload": "airline",
+    "source_task_id": 40,
+    "source_family_id": "airline:task-40",
+    "source_episode_id": "gpt-4o:task40:trial1",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "24570cedefdec4687d70e7302ef0d143d8a12d8455851d6f7a7729ba69c784e7"
+  },
+  {
+    "uid": "0d2c6d79cb863f57",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> think(thought) -> think(thought) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "think",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 63,
+    "source_workload": "airline",
+    "source_task_id": 41,
+    "source_family_id": "airline:task-41",
+    "source_episode_id": "sonnet-35-new:task41:trial5",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 5,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "0fbe023d76ecc74d96835abd490fc1a50daa69e2236b1bfd183ed72ec2214ede"
+  },
+  {
+    "uid": "ded0b93de1f03b00",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> get_user_details(user_id) -> think(thought). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      }
+    ],
+    "tokens": 58,
+    "source_workload": "airline",
+    "source_task_id": 44,
+    "source_family_id": "airline:task-44",
+    "source_episode_id": "sonnet-35-new:task44:trial0",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "b47408489d80937775a56ec7f4864abd489dd08d875b7c4888d5ba10db38dcc6"
+  },
+  {
+    "uid": "ec41767ff70486c9",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> send_certificate(amount,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "send_certificate"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "send_certificate",
+        "argument_keys": [
+          "amount",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 53,
+    "source_workload": "airline",
+    "source_task_id": 45,
+    "source_family_id": "airline:task-45",
+    "source_episode_id": "gpt-4o:task45:trial3",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 3,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "8a86440c9a9241576fc36f7b0a5a5e27197fea5c3c52ccf358f4987b28444027"
+  },
+  {
+    "uid": "7fce71a52a149493",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "search_direct_flight",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 191,
+    "source_workload": "airline",
+    "source_task_id": 2,
+    "source_family_id": "airline:task-2",
+    "source_episode_id": "sonnet-35-new:task2:trial2",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "e6f073e20d0ff29e87fc44142538b398ad31567b673c89bcd51b6d790bf0863f"
+  },
+  {
+    "uid": "8ddfbc233c0e9dcc",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> update_reservation_passengers(passengers,reservation_id) -> update_reservation_baggages(nonfree_baggages,payment_id,reservation_id,total_baggages). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "update_reservation_baggages",
+      "update_reservation_flights",
+      "update_reservation_passengers"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_passengers",
+        "argument_keys": [
+          "passengers",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "update_reservation_baggages",
+        "argument_keys": [
+          "nonfree_baggages",
+          "payment_id",
+          "reservation_id",
+          "total_baggages"
+        ]
+      }
+    ],
+    "tokens": 120,
+    "source_workload": "airline",
+    "source_task_id": 5,
+    "source_family_id": "airline:task-5",
+    "source_episode_id": "sonnet-35-new:task5:trial7",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 7,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "88f8384426d2a73fc109a6cb55136ee5c3b6e40081c7ceef95eb5ba3da59d31b"
+  },
+  {
+    "uid": "d287da623dc0bf83",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin) -> search_onestop_flight(date,destination,origin) -> think(thought) -> update_reservation_flights(cabin,flights,payment_id,reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "search_direct_flight",
+      "search_onestop_flight",
+      "think",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 98,
+    "source_workload": "airline",
+    "source_task_id": 6,
+    "source_family_id": "airline:task-6",
+    "source_episode_id": "sonnet-35-new:task6:trial6",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 6,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "793a89c5554b852a89a87f9b7cbf6dfab2e93a0cb2620cd7e53598f3dc6bd0ce"
+  },
+  {
+    "uid": "543ba909d8c824f1",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id) -> book_reservation(cabin,destination,flight_type,flights,insurance,nonfree_baggages,origin,passengers,payment_methods,total_baggages,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "book_reservation",
+      "get_reservation_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      },
+      {
+        "name": "book_reservation",
+        "argument_keys": [
+          "cabin",
+          "destination",
+          "flight_type",
+          "flights",
+          "insurance",
+          "nonfree_baggages",
+          "origin",
+          "passengers",
+          "payment_methods",
+          "total_baggages",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 118,
+    "source_workload": "airline",
+    "source_task_id": 11,
+    "source_family_id": "airline:task-11",
+    "source_episode_id": "sonnet-35-new:task11:trial7",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 7,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "82834e04946e32d5f0924c1c73f05fedb10aa022f68dbb5179b4a3385de64180"
+  },
+  {
+    "uid": "d75ff7078d052361",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_user_details(user_id) -> get_reservation_details(reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 60,
+    "source_workload": "airline",
+    "source_task_id": 12,
+    "source_family_id": "airline:task-12",
+    "source_episode_id": "sonnet-35-new:task12:trial0",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "35783f1e6af7e9e090ac5374c6614f32b11003bd7ba7b090f746805936aecc7c"
+  },
+  {
+    "uid": "2afb190a3084cb6f",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> search_onestop_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> think(thought) -> get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "search_direct_flight",
+      "search_onestop_flight",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      }
+    ],
+    "tokens": 160,
+    "source_workload": "airline",
+    "source_task_id": 13,
+    "source_family_id": "airline:task-13",
+    "source_episode_id": "sonnet-35-new:task13:trial0",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "d8a49fa151f953f986dc492e9c0106b7633105d1d9077afaf472f3ca1c659e28"
+  },
+  {
+    "uid": "b5a62f4585db51c9",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> search_onestop_flight(date,destination,origin) -> think(thought) -> think(thought) -> update_reservation_baggages(nonfree_baggages,payment_id,reservation_id,total_baggages). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "search_onestop_flight",
+      "think",
+      "update_reservation_baggages"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "search_onestop_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "update_reservation_baggages",
+        "argument_keys": [
+          "nonfree_baggages",
+          "payment_id",
+          "reservation_id",
+          "total_baggages"
+        ]
+      }
+    ],
+    "tokens": 90,
+    "source_workload": "airline",
+    "source_task_id": 14,
+    "source_family_id": "airline:task-14",
+    "source_episode_id": "sonnet-35-new:task14:trial5",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 5,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "db65ecf187134d2890bcb9af8ae7ecb26816d123bdcacf0484403ff290b4a4c2"
+  },
+  {
+    "uid": "9ec57efa3bff94fb",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> think(thought) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> think(thought) -> search_direct_flight(date,destination,origin) -> search_direct_flight(date,destination,origin) -> think(thought). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "search_direct_flight",
+      "think",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      }
+    ],
+    "tokens": 114,
+    "source_workload": "airline",
+    "source_task_id": 15,
+    "source_family_id": "airline:task-15",
+    "source_episode_id": "sonnet-35-new:task15:trial1",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "7526a11b4428c5d72b133d827cf835557c5a507e1bd55930d63f0b8f18ee8057"
+  },
+  {
+    "uid": "c4344ff095f7324e",
+    "text": "Verified airline workflow: get_user_details(user_id) -> think(thought) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> send_certificate(amount,user_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "send_certificate",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "send_certificate",
+        "argument_keys": [
+          "amount",
+          "user_id"
+        ]
+      }
+    ],
+    "tokens": 122,
+    "source_workload": "airline",
+    "source_task_id": 16,
+    "source_family_id": "airline:task-16",
+    "source_episode_id": "sonnet-35-new:task16:trial4",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 4,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "42e10daf3a35b2c9c5e0ea84c2fcbacdc3dd5f1518557db83e42c9347369cce7"
+  },
+  {
+    "uid": "551a25b555afcc5f",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_user_details(user_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 53,
+    "source_workload": "airline",
+    "source_task_id": 18,
+    "source_family_id": "airline:task-18",
+    "source_episode_id": "sonnet-35-new:task18:trial0",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "ed1c4ed051996f70886a0ebb179e4c0673c896dad6a718adaa6778d9882852c6"
+  },
+  {
+    "uid": "3a8e5216631e6d97",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin) -> update_reservation_flights(cabin,flights,payment_id,reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "search_direct_flight",
+      "transfer_to_human_agents",
+      "update_reservation_flights"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "update_reservation_flights",
+        "argument_keys": [
+          "cabin",
+          "flights",
+          "payment_id",
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 73,
+    "source_workload": "airline",
+    "source_task_id": 20,
+    "source_family_id": "airline:task-20",
+    "source_episode_id": "gpt-4o:task20:trial2",
+    "source_file": "gpt-4o-airline.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "9a12c31941cebd16d7f44979b0d6faf8021d44c92c1520c8a18f1577ebea39cd"
+  },
+  {
+    "uid": "649aa6190c1c38dd",
+    "text": "Verified airline workflow: get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 54,
+    "source_workload": "airline",
+    "source_task_id": 36,
+    "source_family_id": "airline:task-36",
+    "source_episode_id": "sonnet-35-new:task36:trial7",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 7,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "7ad24a52c6b9b07a3d8f40aa915ef60c05537ff077a307b40d6aff016263ccbd"
+  },
+  {
+    "uid": "3c253dd57058c5a0",
+    "text": "Verified airline workflow: get_user_details(user_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> get_reservation_details(reservation_id) -> search_direct_flight(date,destination,origin) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "get_reservation_details",
+      "get_user_details",
+      "search_direct_flight",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "get_reservation_details",
+        "argument_keys": [
+          "reservation_id"
+        ]
+      },
+      {
+        "name": "search_direct_flight",
+        "argument_keys": [
+          "date",
+          "destination",
+          "origin"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 95,
+    "source_workload": "airline",
+    "source_task_id": 40,
+    "source_family_id": "airline:task-40",
+    "source_episode_id": "sonnet-35-new:task40:trial0",
+    "source_file": "sonnet-35-new-airline.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "9a7c5b4ecd571612896f4b120b7e8a9a37b5ba251c3e5d520d3514bf64a2e939"
+  }
+]

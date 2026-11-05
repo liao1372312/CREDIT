@@ -1,0 +1,22 @@
+{
+  "protocol": "llm-shared-v1",
+  "seeds": [61, 67, 71, 73, 79],
+  "training_policy_samples_per_cell": 256,
+  "training_api_samples_per_cell": 128,
+  "target_probe_samples_per_cell": 128,
+  "training_intervention_pairs": 128,
+  "calibration_episodes": 256,
+  "test_episodes_per_seed": 512,
+  "bank_capacity": 6,
+  "retrieval_depth": 4,
+  "future_epoch_weights": {"source": 0.5, "target": 0.5},
+  "mixture_radius": 0.2,
+  "storage_cost_per_memory": 0.005,
+  "confidence_delta": 0.05,
+  "epochs": 80,
+  "learning_rate": 0.01,
+  "outcome_weight": 0.2,
+  "sparse_weight": 0.002,
+  "threads": 1,
+  "note": "Real Qwen constrained next-token decision scores; cached finite contexts and synthetic API. No teacher probabilities enter student training. Fixed protocol before fresh test outcomes."
+}

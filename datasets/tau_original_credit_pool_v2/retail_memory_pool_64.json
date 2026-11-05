@@ -1,0 +1,5027 @@
+[
+  {
+    "uid": "161da0fc220d666c",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 120,
+    "source_workload": "retail",
+    "source_task_id": 0,
+    "source_family_id": "retail:task-0",
+    "source_episode_id": "gpt-4o:task0:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "9fc530659d459dd3f3a69fff2b0bfd9994376331e85f7c30deb4a0d10a155bea"
+  },
+  {
+    "uid": "774af885811a90c1",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 128,
+    "source_workload": "retail",
+    "source_task_id": 1,
+    "source_family_id": "retail:task-1",
+    "source_episode_id": "gpt-4o:task1:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "832cc4e03e14ba75a2dc0b044cd712c1f4948d8cc54e20ad3c923f50a420ec35"
+  },
+  {
+    "uid": "110d466158138be1",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> list_all_product_types() -> get_product_details(product_id) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 116,
+    "source_workload": "retail",
+    "source_task_id": 2,
+    "source_family_id": "retail:task-2",
+    "source_episode_id": "gpt-4o:task2:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "5a42808f4139ed6ab3c762a7a3483e1dfaa7998d0938f122e5a64d08f233c807"
+  },
+  {
+    "uid": "a156aea4743079a1",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> list_all_product_types() -> get_product_details(product_id) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> think(thought) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types",
+      "modify_pending_order_items",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 123,
+    "source_workload": "retail",
+    "source_task_id": 3,
+    "source_family_id": "retail:task-3",
+    "source_episode_id": "gpt-4o:task3:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "dc253f58a899fceed838160d5ddcd82813a7414ede7850d6926de2b75c41a72b"
+  },
+  {
+    "uid": "dbbe107ddace6a44",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> list_all_product_types() -> get_product_details(product_id) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 136,
+    "source_workload": "retail",
+    "source_task_id": 4,
+    "source_family_id": "retail:task-4",
+    "source_episode_id": "gpt-4o:task4:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "989dbd94dd45aeee69b91aa3448e91f348e7df5b2d74fb2acfe0a6dadc5de57e"
+  },
+  {
+    "uid": "1a7be0fec703d680",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> get_product_details(product_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 111,
+    "source_workload": "retail",
+    "source_task_id": 5,
+    "source_family_id": "retail:task-5",
+    "source_episode_id": "sonnet-35-new:task5:trial2",
+    "source_file": "sonnet-35-new-retail.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "dca95ebc2b5082d94c87c974defe77a0f9b3776837ece4bb14aed7f6ff072447"
+  },
+  {
+    "uid": "e8a55507822202e1",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 114,
+    "source_workload": "retail",
+    "source_task_id": 6,
+    "source_family_id": "retail:task-6",
+    "source_episode_id": "sonnet-35-new:task6:trial0",
+    "source_file": "sonnet-35-new-retail.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "d213468086965abd24c5349f1a8f26a178ab5cd17440678f5df5273630935ddd"
+  },
+  {
+    "uid": "bf87014b3bf28ece",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_email(email) -> find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 123,
+    "source_workload": "retail",
+    "source_task_id": 7,
+    "source_family_id": "retail:task-7",
+    "source_episode_id": "sonnet-35-new:task7:trial2",
+    "source_file": "sonnet-35-new-retail.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "8ea8baa173c06a3f24d6f23303fcda3d75298d15c43f48fc2745dea3390c4208"
+  },
+  {
+    "uid": "416434a6df022520",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_email(email) -> get_order_details(order_id) -> get_user_details(user_id) -> find_user_id_by_email(email) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> get_product_details(product_id) -> think(thought) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 121,
+    "source_workload": "retail",
+    "source_task_id": 8,
+    "source_family_id": "retail:task-8",
+    "source_episode_id": "sonnet-35-new:task8:trial7",
+    "source_file": "sonnet-35-new-retail.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 7,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "e26c66ed02c14908013e2a0e3f1e278d89c4a34a542531188089b0979e8644b2"
+  },
+  {
+    "uid": "5c6b793e7b391058",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_user_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 67,
+    "source_workload": "retail",
+    "source_task_id": 10,
+    "source_family_id": "retail:task-10",
+    "source_episode_id": "gpt-4o:task10:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "566752ef1cbffbaa013d1d1cc2def9356dd67e78e17c9155ada20c1a08a7ca1e"
+  },
+  {
+    "uid": "aeb745fb9925c888",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 92,
+    "source_workload": "retail",
+    "source_task_id": 11,
+    "source_family_id": "retail:task-11",
+    "source_episode_id": "gpt-4o:task11:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "075daf2438444f5ca7d96f5eaa159655184d7616bc1ef328c456a83307b50ca0"
+  },
+  {
+    "uid": "8f7ab63ff9829da4",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 76,
+    "source_workload": "retail",
+    "source_task_id": 12,
+    "source_family_id": "retail:task-12",
+    "source_episode_id": "gpt-4o:task12:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "6f4b3881537782d6c05855cfc59310f64b137e2f9c3b50895bce87a7aa50d50c"
+  },
+  {
+    "uid": "39135c0c0cef627c",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 69,
+    "source_workload": "retail",
+    "source_task_id": 13,
+    "source_family_id": "retail:task-13",
+    "source_episode_id": "gpt-4o:task13:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "bc8c3fa50ac5ddc4c866116e79cdeac962596c8805f1e1e97ccacf4c4f19fdc5"
+  },
+  {
+    "uid": "169ec7d80410a227",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_product_details(product_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 84,
+    "source_workload": "retail",
+    "source_task_id": 15,
+    "source_family_id": "retail:task-15",
+    "source_episode_id": "gpt-4o:task15:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "bba055a7b6109a875c9016ee58854a0d4f6d778b2802541bce16b1dc53d2b4b8"
+  },
+  {
+    "uid": "9f92198b9356f24c",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> cancel_pending_order(order_id,reason) -> cancel_pending_order(order_id,reason) -> return_delivered_order_items(item_ids,order_id,payment_method_id) -> calculate(expression). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "calculate",
+      "cancel_pending_order",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      }
+    ],
+    "tokens": 111,
+    "source_workload": "retail",
+    "source_task_id": 16,
+    "source_family_id": "retail:task-16",
+    "source_episode_id": "gpt-4o:task16:trial2",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "8e4218d9965cc82090a6503a71843197262ace20ec86de0f733344263f3a7b0d"
+  },
+  {
+    "uid": "a92493d2f05f5714",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_order_details(order_id) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "modify_pending_order_address"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      }
+    ],
+    "tokens": 72,
+    "source_workload": "retail",
+    "source_task_id": 17,
+    "source_family_id": "retail:task-17",
+    "source_episode_id": "gpt-4o:task17:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "75620a5e68028f26ec02fdaf6bd94f47c64764a2b9dd6c9d60abc115714ebb0f"
+  },
+  {
+    "uid": "e3a620376df9cdde",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 78,
+    "source_workload": "retail",
+    "source_task_id": 18,
+    "source_family_id": "retail:task-18",
+    "source_episode_id": "gpt-4o:task18:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "d240b2f0e22af2ab395986ee36c39be36aa209eeb91cb6f5c9a4eb6bc12d094a"
+  },
+  {
+    "uid": "868ac42e6b4a50b0",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> list_all_product_types() -> get_product_details(product_id) -> get_product_details(product_id) -> calculate(expression) -> calculate(expression) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "calculate",
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 111,
+    "source_workload": "retail",
+    "source_task_id": 19,
+    "source_family_id": "retail:task-19",
+    "source_episode_id": "gpt-4o:task19:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "c2f70ee3816c9f3a72a08f2684191445638304223c6cbfd7db78967f439060be"
+  },
+  {
+    "uid": "0aab29e7870a248d",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> get_product_details(product_id) -> get_product_details(product_id) -> get_product_details(product_id) -> calculate(expression) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "calculate",
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 131,
+    "source_workload": "retail",
+    "source_task_id": 20,
+    "source_family_id": "retail:task-20",
+    "source_episode_id": "sonnet-35-new:task20:trial1",
+    "source_file": "sonnet-35-new-retail.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "cac484ab6d2c97787c8542726a97eb638994bd479a61520671a9237602da5082"
+  },
+  {
+    "uid": "dc7bcf46279bab9e",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 150,
+    "source_workload": "retail",
+    "source_task_id": 23,
+    "source_family_id": "retail:task-23",
+    "source_episode_id": "gpt-4o:task23:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "689683e5389ef7c7dad0d0a92e438646ab0322d58be02854e8aae4ccf5d58b4c"
+  },
+  {
+    "uid": "4d3a7fee79fba6c7",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      }
+    ],
+    "tokens": 73,
+    "source_workload": "retail",
+    "source_task_id": 24,
+    "source_family_id": "retail:task-24",
+    "source_episode_id": "gpt-4o:task24:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "6f271df5410dc2f734b80536d5038226dfcf8be82e64a1981717ada9c6db6142"
+  },
+  {
+    "uid": "e8f85164baad114d",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> transfer_to_human_agents(summary). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "transfer_to_human_agents"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "transfer_to_human_agents",
+        "argument_keys": [
+          "summary"
+        ]
+      }
+    ],
+    "tokens": 80,
+    "source_workload": "retail",
+    "source_task_id": 25,
+    "source_family_id": "retail:task-25",
+    "source_episode_id": "gpt-4o:task25:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "9323932fa087554350337f2dbf14f6098090d8d95bc92064fe3fee787b654226"
+  },
+  {
+    "uid": "2ca82b9bc5ee0773",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 89,
+    "source_workload": "retail",
+    "source_task_id": 26,
+    "source_family_id": "retail:task-26",
+    "source_episode_id": "gpt-4o:task26:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "2bbc82e74c26608f16f2294e2ba42d381f2f81f632dd8bfada99946c2863a27f"
+  },
+  {
+    "uid": "7fd1099bd3900e05",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 116,
+    "source_workload": "retail",
+    "source_task_id": 27,
+    "source_family_id": "retail:task-27",
+    "source_episode_id": "gpt-4o:task27:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "9e07ae4b9c984f5decb83be1e174c27ed55e9bca1293f528a43ab855e540d6f7"
+  },
+  {
+    "uid": "54531e7eb38ddf1c",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> think(thought) -> cancel_pending_order(order_id,reason) -> return_delivered_order_items(item_ids,order_id,payment_method_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_pending_order",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 142,
+    "source_workload": "retail",
+    "source_task_id": 28,
+    "source_family_id": "retail:task-28",
+    "source_episode_id": "sonnet-35-new:task28:trial0",
+    "source_file": "sonnet-35-new-retail.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "c87ba3163eb20518a026b313093d5368cf772057a22a9cf8dbd446e326070b06"
+  },
+  {
+    "uid": "8804ad6a4847429a",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> list_all_product_types() -> get_product_details(product_id) -> get_user_details(user_id) -> get_order_details(order_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 131,
+    "source_workload": "retail",
+    "source_task_id": 29,
+    "source_family_id": "retail:task-29",
+    "source_episode_id": "gpt-4o:task29:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "ca1f8c11476f1fd5cfd041cc79749cfb6fbe91c4360c0b90b7e931e6cdbcc786"
+  },
+  {
+    "uid": "d49bbe6bcfcff05d",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> cancel_pending_order(order_id,reason) -> think(thought) -> get_order_details(order_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_pending_order",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 124,
+    "source_workload": "retail",
+    "source_task_id": 31,
+    "source_family_id": "retail:task-31",
+    "source_episode_id": "gpt-4o:task31:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "e8949d4580152a1f2aeeb820f489bc63c323b9250497be57ff8900b24731666c"
+  },
+  {
+    "uid": "c49d257140506753",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> modify_pending_order_payment(order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_user_details",
+      "modify_pending_order_payment"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_payment",
+        "argument_keys": [
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 65,
+    "source_workload": "retail",
+    "source_task_id": 40,
+    "source_family_id": "retail:task-40",
+    "source_episode_id": "gpt-4o:task40:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "72d1763cfe11d553a6a611f89034dd5f77af80ca80158464dd0be315d8419000"
+  },
+  {
+    "uid": "a4d29671e53a7ff8",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> modify_user_address(address1,address2,city,country,state,user_id,zip) -> get_order_details(order_id) -> get_order_details(order_id) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip) -> list_all_product_types() -> get_product_details(product_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types",
+      "modify_pending_order_address",
+      "modify_pending_order_items",
+      "modify_user_address"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "modify_user_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "state",
+          "user_id",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 155,
+    "source_workload": "retail",
+    "source_task_id": 42,
+    "source_family_id": "retail:task-42",
+    "source_episode_id": "gpt-4o:task42:trial2",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "4aee10daed70b74627517c14cc348c62e96ae33e4203dbf9dcab53e33bcd456b"
+  },
+  {
+    "uid": "d475ae3506a2ad61",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_order_details(order_id) -> get_product_details(product_id) -> calculate(expression) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "calculate",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 81,
+    "source_workload": "retail",
+    "source_task_id": 44,
+    "source_family_id": "retail:task-44",
+    "source_episode_id": "gpt-4o:task44:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "0c04e84e5371f6ca0de47473dbdb4121eea9e888dd9d264b067071379d9eba2c"
+  },
+  {
+    "uid": "62cbe9c7ae39c4bf",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> get_user_details(user_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 111,
+    "source_workload": "retail",
+    "source_task_id": 45,
+    "source_family_id": "retail:task-45",
+    "source_episode_id": "gpt-4o:task45:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "4ae92e3e435e5ebdcbea2259930f1437b13c9f4898204cc4d1281110529a8b9e"
+  },
+  {
+    "uid": "d39a50d81ea80e6b",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id) -> calculate(expression). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "calculate",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      }
+    ],
+    "tokens": 86,
+    "source_workload": "retail",
+    "source_task_id": 47,
+    "source_family_id": "retail:task-47",
+    "source_episode_id": "gpt-4o:task47:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "211b3dfe0b69b4d97be9b44d2ce045e497d2331be074e476d0c342608810e527"
+  },
+  {
+    "uid": "93b52f55b15e0adb",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id) -> think(thought). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      }
+    ],
+    "tokens": 94,
+    "source_workload": "retail",
+    "source_task_id": 48,
+    "source_family_id": "retail:task-48",
+    "source_episode_id": "gpt-4o:task48:trial3",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 3,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "e3be4c800277d56072de881f2cc96e0798fcf5d4f792cb4ae5c9518894dbbfd6"
+  },
+  {
+    "uid": "712dee563db0da41",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 106,
+    "source_workload": "retail",
+    "source_task_id": 49,
+    "source_family_id": "retail:task-49",
+    "source_episode_id": "gpt-4o:task49:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "bb45df85f69d9741cca58fa7dd5d2854a38050c792b1eb0c6f046d8920a7b2f7"
+  },
+  {
+    "uid": "a7be2c997ea966b1",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_order_details(order_id) -> get_user_details(user_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 90,
+    "source_workload": "retail",
+    "source_task_id": 51,
+    "source_family_id": "retail:task-51",
+    "source_episode_id": "gpt-4o:task51:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "2bfbc869f70c863e044323d359cb5aeb32b6d2cfba4427ed7a6e7392665d4dce"
+  },
+  {
+    "uid": "f4000aa1aa41112c",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 82,
+    "source_workload": "retail",
+    "source_task_id": 53,
+    "source_family_id": "retail:task-53",
+    "source_episode_id": "gpt-4o:task53:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "6fbb70f6b3a308b3a61020b89244e41717936d230dce4cb6d4372b05d1e6d64b"
+  },
+  {
+    "uid": "b2fd950283f64f08",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> cancel_pending_order(order_id,reason) -> cancel_pending_order(order_id,reason) -> return_delivered_order_items(item_ids,order_id,payment_method_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_pending_order",
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 160,
+    "source_workload": "retail",
+    "source_task_id": 55,
+    "source_family_id": "retail:task-55",
+    "source_episode_id": "gpt-4o:task55:trial2",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "4b9f939f22a2c4da467f8f54f92ea814854566fb71ea4a8e4a59d9599df5c300"
+  },
+  {
+    "uid": "1cd40cbc21e7009f",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> list_all_product_types() -> get_product_details(product_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 97,
+    "source_workload": "retail",
+    "source_task_id": 56,
+    "source_family_id": "retail:task-56",
+    "source_episode_id": "gpt-4o:task56:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "abd48cbc6f9951c18a722d6bb0bef5cb1081fd02e5784c3808edf565af861c0a"
+  },
+  {
+    "uid": "959f5f8b5d61b34c",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_product_details(product_id) -> get_product_details(product_id) -> think(thought) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 97,
+    "source_workload": "retail",
+    "source_task_id": 58,
+    "source_family_id": "retail:task-58",
+    "source_episode_id": "gpt-4o:task58:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "c76cb47fa27b8f1cec649a5833f927d6b07a41db76b7e0539cdec9c7f890848e"
+  },
+  {
+    "uid": "5cb33971b02c686f",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_order_details(order_id) -> get_order_details(order_id) -> cancel_pending_order(order_id,reason) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_pending_order",
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "modify_pending_order_address"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      }
+    ],
+    "tokens": 96,
+    "source_workload": "retail",
+    "source_task_id": 59,
+    "source_family_id": "retail:task-59",
+    "source_episode_id": "gpt-4o:task59:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "e073fb6fe30ce26b4687dd72787272993c03c8fc6463f06f512225505a2cd5d1"
+  },
+  {
+    "uid": "0007cc8aa5152d5d",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_order_details(order_id) -> get_product_details(product_id) -> think(thought) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "modify_pending_order_items",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 82,
+    "source_workload": "retail",
+    "source_task_id": 60,
+    "source_family_id": "retail:task-60",
+    "source_episode_id": "gpt-4o:task60:trial2",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "59f9bacfd0b86c295375d4b3f5c84a44c6f2876b1d5f77470a519047f24bcc5f"
+  },
+  {
+    "uid": "fed06b5a96ceefd5",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> list_all_product_types() -> get_product_details(product_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 115,
+    "source_workload": "retail",
+    "source_task_id": 62,
+    "source_family_id": "retail:task-62",
+    "source_episode_id": "gpt-4o:task62:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "0ee79da61ced25730a2e3d731a51cadf694949d37237a059e3e0cd2aa55c498d"
+  },
+  {
+    "uid": "5755441c75971265",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> list_all_product_types() -> get_product_details(product_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 90,
+    "source_workload": "retail",
+    "source_task_id": 64,
+    "source_family_id": "retail:task-64",
+    "source_episode_id": "gpt-4o:task64:trial2",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "89cceded9fb757d1a7a75e2d8c6b50e57422f4db09ad45beb8b51160b4483961"
+  },
+  {
+    "uid": "0f5da7f4259b41bf",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> find_user_id_by_name_zip(first_name,last_name,zip) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      }
+    ],
+    "tokens": 87,
+    "source_workload": "retail",
+    "source_task_id": 67,
+    "source_family_id": "retail:task-67",
+    "source_episode_id": "gpt-4o:task67:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "ce628273b4a431d26ebe8913c66df33bef3156d807fab4227ad4c9bdcc793b4d"
+  },
+  {
+    "uid": "aa493056e59dbe6f",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      }
+    ],
+    "tokens": 81,
+    "source_workload": "retail",
+    "source_task_id": 68,
+    "source_family_id": "retail:task-68",
+    "source_episode_id": "gpt-4o:task68:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "79871d596587206e5ee6370dca98830c6c4199eb7997ee6e6512fd62da42b30b"
+  },
+  {
+    "uid": "0c5835ed294b04b0",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> calculate(expression). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "calculate",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "calculate",
+        "argument_keys": [
+          "expression"
+        ]
+      }
+    ],
+    "tokens": 91,
+    "source_workload": "retail",
+    "source_task_id": 70,
+    "source_family_id": "retail:task-70",
+    "source_episode_id": "gpt-4o:task70:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "ef5ab4ec1db11cb9bb17253b416b2c353044903028103d158b271ab4b0ffcc7d"
+  },
+  {
+    "uid": "0493529494a08df3",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_order_details(order_id) -> get_order_details(order_id) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> get_order_details(order_id) -> cancel_pending_order(order_id,reason). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_pending_order",
+      "exchange_delivered_order_items",
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_product_details",
+      "modify_pending_order_address",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      }
+    ],
+    "tokens": 133,
+    "source_workload": "retail",
+    "source_task_id": 78,
+    "source_family_id": "retail:task-78",
+    "source_episode_id": "gpt-4o:task78:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "b5cbe24bd4c95eefd243f34aa796f14fa5c2a033acb4614fde7b44eca154976e"
+  },
+  {
+    "uid": "86e227a5b00b43bb",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 79,
+    "source_workload": "retail",
+    "source_task_id": 80,
+    "source_family_id": "retail:task-80",
+    "source_episode_id": "gpt-4o:task80:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "32f6e5ea46b70da3abd7de237a20926de300847d424673d842e451b315080e2f"
+  },
+  {
+    "uid": "5c883ce21692a375",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> cancel_pending_order(order_id,reason) -> cancel_pending_order(order_id,reason). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_pending_order",
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      }
+    ],
+    "tokens": 92,
+    "source_workload": "retail",
+    "source_task_id": 81,
+    "source_family_id": "retail:task-81",
+    "source_episode_id": "gpt-4o:task81:trial3",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 3,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "613b2dc09dbaa4645afd8f25a9bec1477065bdba476a87a6f036c0b3c4ee85da"
+  },
+  {
+    "uid": "704319a5fee51210",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 96,
+    "source_workload": "retail",
+    "source_task_id": 82,
+    "source_family_id": "retail:task-82",
+    "source_episode_id": "gpt-4o:task82:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "e667d8760ad5e2b695482d2d1b59cc4e56697ae1cb7523ed67331fd6223764e3"
+  },
+  {
+    "uid": "66de27bfa4b7c785",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 104,
+    "source_workload": "retail",
+    "source_task_id": 84,
+    "source_family_id": "retail:task-84",
+    "source_episode_id": "gpt-4o:task84:trial2",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "5c03c848ea4a27b993eaa047a8bde625f10effcbdf1dde0a482c115301beda38"
+  },
+  {
+    "uid": "3da1aa5de40331ba",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 106,
+    "source_workload": "retail",
+    "source_task_id": 85,
+    "source_family_id": "retail:task-85",
+    "source_episode_id": "gpt-4o:task85:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "a92f171156c281edcc8f2b5344c922af6fb77d16cd0fc75d80c5f07009870ca8"
+  },
+  {
+    "uid": "d182d6549974b48e",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> modify_user_address(address1,address2,city,country,state,user_id,zip). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "modify_pending_order_items",
+      "modify_user_address"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "modify_user_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "state",
+          "user_id",
+          "zip"
+        ]
+      }
+    ],
+    "tokens": 124,
+    "source_workload": "retail",
+    "source_task_id": 86,
+    "source_family_id": "retail:task-86",
+    "source_episode_id": "gpt-4o:task86:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "cd35c0189b2a82b198e92e341af1d4003f6d4a103899516a8b03eb17c74825d7"
+  },
+  {
+    "uid": "e9776e4e18ab91fe",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip) -> modify_user_address(address1,address2,city,country,state,user_id,zip). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_user_details",
+      "modify_pending_order_address",
+      "modify_user_address"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      },
+      {
+        "name": "modify_user_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "state",
+          "user_id",
+          "zip"
+        ]
+      }
+    ],
+    "tokens": 159,
+    "source_workload": "retail",
+    "source_task_id": 87,
+    "source_family_id": "retail:task-87",
+    "source_episode_id": "gpt-4o:task87:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "de7544d27222c56b78c68dbb8106686799589c09fd3473356ee536a6635f2556"
+  },
+  {
+    "uid": "e6b8c182858df979",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> list_all_product_types() -> get_product_details(product_id) -> cancel_pending_order(order_id,reason). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_pending_order",
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      }
+    ],
+    "tokens": 82,
+    "source_workload": "retail",
+    "source_task_id": 88,
+    "source_family_id": "retail:task-88",
+    "source_episode_id": "gpt-4o:task88:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "bdabf77e23759778ea70bf8bd8e8e804c65806b79ca55eb016e572774d747796"
+  },
+  {
+    "uid": "fb5c7de749cf38ca",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_product_details(product_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 82,
+    "source_workload": "retail",
+    "source_task_id": 89,
+    "source_family_id": "retail:task-89",
+    "source_episode_id": "gpt-4o:task89:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "6e7c42d06a27e565baff8aed253299f2303a5fe0831e7f5ca35b9427cda162f8"
+  },
+  {
+    "uid": "7f4d3313ea24b918",
+    "text": "Verified retail workflow: find_user_id_by_email(email) -> get_user_details(user_id) -> get_order_details(order_id) -> get_product_details(product_id) -> cancel_pending_order(order_id,reason). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "cancel_pending_order",
+      "find_user_id_by_email",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_email",
+        "argument_keys": [
+          "email"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "cancel_pending_order",
+        "argument_keys": [
+          "order_id",
+          "reason"
+        ]
+      }
+    ],
+    "tokens": 69,
+    "source_workload": "retail",
+    "source_task_id": 90,
+    "source_family_id": "retail:task-90",
+    "source_episode_id": "gpt-4o:task90:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "617f7b6ac5afc39ef64ae22ce946e9e606c8e6bedd455798ef1fde3d40a857a3"
+  },
+  {
+    "uid": "9171774bd0fde564",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> get_product_details(product_id) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 129,
+    "source_workload": "retail",
+    "source_task_id": 91,
+    "source_family_id": "retail:task-91",
+    "source_episode_id": "sonnet-35-new:task91:trial3",
+    "source_file": "sonnet-35-new-retail.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 3,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "5fdff2cd8641d689ca4365d26ed2c5c10aec6ee9c741795424633f1a048f5a99"
+  },
+  {
+    "uid": "0a25c4ff6a9d773b",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> think(thought) -> get_order_details(order_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_user_details",
+      "return_delivered_order_items",
+      "think"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "think",
+        "argument_keys": [
+          "thought"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 103,
+    "source_workload": "retail",
+    "source_task_id": 92,
+    "source_family_id": "retail:task-92",
+    "source_episode_id": "gpt-4o:task92:trial0",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 0,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "3bd0c0d41fe822e1dc9abd84c08425373ba9547ddad82facf3d048495ca4009f"
+  },
+  {
+    "uid": "ae98dab6ab9ca474",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> list_all_product_types() -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "list_all_product_types"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "list_all_product_types",
+        "argument_keys": []
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 105,
+    "source_workload": "retail",
+    "source_task_id": 93,
+    "source_family_id": "retail:task-93",
+    "source_episode_id": "gpt-4o:task93:trial2",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 2,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "e798a8e0b8f1d01ef73baa7169db02d8eb8a7f02f38eb813a889dcf689bb4293"
+  },
+  {
+    "uid": "c00e535e82f58d32",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip) -> get_product_details(product_id) -> exchange_delivered_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "exchange_delivered_order_items",
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "modify_pending_order_address",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "exchange_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 130,
+    "source_workload": "retail",
+    "source_task_id": 97,
+    "source_family_id": "retail:task-97",
+    "source_episode_id": "gpt-4o:task97:trial3",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 3,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "d080406c3586cf8308e3119a9f969489a72882d8b8d6e340368e4f16a3a0c039"
+  },
+  {
+    "uid": "5fe23ae74f85fb1a",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "modify_pending_order_address",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 111,
+    "source_workload": "retail",
+    "source_task_id": 98,
+    "source_family_id": "retail:task-98",
+    "source_episode_id": "gpt-4o:task98:trial1",
+    "source_file": "gpt-4o-retail.json",
+    "source_model_family": "gpt-4o",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "7c3d2ff44c72cda028c39df96b45d0510635429b2ed29c2be02a735d9629d1d0"
+  },
+  {
+    "uid": "76e94120ac345bd8",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> get_product_details(product_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> return_delivered_order_items(item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "modify_pending_order_items",
+      "return_delivered_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "return_delivered_order_items",
+        "argument_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 135,
+    "source_workload": "retail",
+    "source_task_id": 101,
+    "source_family_id": "retail:task-101",
+    "source_episode_id": "sonnet-35-new:task101:trial4",
+    "source_file": "sonnet-35-new-retail.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 4,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "42149811869046085531ec63d3972c651fb78909dd535b0a06c00106221aa1bd"
+  },
+  {
+    "uid": "55988b08d0fbefad",
+    "text": "Verified retail workflow: find_user_id_by_name_zip(first_name,last_name,zip) -> get_user_details(user_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_order_details(order_id) -> get_product_details(product_id) -> modify_pending_order_address(address1,address2,city,country,order_id,state,zip) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id) -> get_product_details(product_id) -> modify_pending_order_items(item_ids,new_item_ids,order_id,payment_method_id). Resolve identifiers from current tool results, check policy and current state before mutations, and verify the requested end state. Never reuse historical literal values.",
+    "tools": [
+      "find_user_id_by_name_zip",
+      "get_order_details",
+      "get_product_details",
+      "get_user_details",
+      "modify_pending_order_address",
+      "modify_pending_order_items"
+    ],
+    "tool_chain": [
+      {
+        "name": "find_user_id_by_name_zip",
+        "argument_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ]
+      },
+      {
+        "name": "get_user_details",
+        "argument_keys": [
+          "user_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_order_details",
+        "argument_keys": [
+          "order_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_address",
+        "argument_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      },
+      {
+        "name": "get_product_details",
+        "argument_keys": [
+          "product_id"
+        ]
+      },
+      {
+        "name": "modify_pending_order_items",
+        "argument_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ]
+      }
+    ],
+    "tokens": 143,
+    "source_workload": "retail",
+    "source_task_id": 102,
+    "source_family_id": "retail:task-102",
+    "source_episode_id": "sonnet-35-new:task102:trial1",
+    "source_file": "sonnet-35-new-retail.json",
+    "source_model_family": "sonnet-35-new",
+    "source_trial": 1,
+    "source_reward": 1.0,
+    "source_success_verified": true,
+    "source_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "split": "development",
+    "abstract_chain_sha256": "1e7ce87444600a427f5eba9c474a0ddcba9e1b00ded3674f891b25603d120644"
+  }
+]

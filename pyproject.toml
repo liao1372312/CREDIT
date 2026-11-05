@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "credit-research-prototype"
+version = "0.1.0"
+description = "CREDIT causal memory valuation research prototype"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "scikit-learn>=1.2",
+  "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+data = ["openpyxl>=3.1"]
+test = ["pytest>=7"]
+neural = ["torch>=2"]
+llm = ["torch>=2", "transformers>=4.46,<5", "accelerate>=0.26"]
+
+[tool.setuptools.packages.find]
+include = ["credit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

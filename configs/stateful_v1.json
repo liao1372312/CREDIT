@@ -1,0 +1,22 @@
+{
+  "protocol": "stateful-v1",
+  "seeds": [7, 11, 13, 17, 19],
+  "families": ["books", "travel", "inventory", "payments"],
+  "training_policy_samples_per_cell": 256,
+  "training_api_samples_per_cell": 128,
+  "target_probe_samples_per_cell": 128,
+  "calibration_episodes": 256,
+  "test_episodes_per_seed": 512,
+  "bank_capacity": 6,
+  "retrieval_depth": 4,
+  "future_epoch_weights": {"source": 0.5, "target": 0.5},
+  "mixture_radius": 0.2,
+  "storage_cost_per_memory": 0.005,
+  "confidence_delta": 0.05,
+  "mechanism_equivalence_tolerance": 0.15,
+  "voi_particles": 12,
+  "voi_probe_batch": 32,
+  "voi_probe_cost": 0.001,
+  "certification_samples_per_cell": 4096,
+  "note": "Finite-state synthetic reference; protocol and simulator fixed before test outcomes. Physical source/target snapshots share visible schema."
+}
