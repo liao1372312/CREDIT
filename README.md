@@ -4,16 +4,7 @@ Research code and bundled data for *CREDIT: Retrieval-Aware Causal Memory Mainte
 
 ## Repository contents
 
-- `credit/v3/` — core CREDIT implementation: factorial exposure, outcome modeling, drift gating, bank selection, and switch certification.
-- `credit/paper_7944_protocol.py` — registered paper settings and catalog sampling.
-- `credit/` — experiment drivers and service adapters.
-- `datasets/tau_original_credit_pool_v2/` — historical Retail and Airline memory pools and split manifest.
-- `configs/` — experiment configurations.
-- `tests/` — code tests.
+- `credit/v3/` — core CREDIT code.
+- `credit/paper_7944_protocol.py` and `credit/paper_7944_model.py` — paper protocol and outcome model code.
+- `datasets/` — bundled data, including historical Retail and Airline memory pools.
 
-## Install and test
-
-```sh
-pip install -e ".[test]"
-python -m pytest -q
-```
