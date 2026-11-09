@@ -53,6 +53,8 @@ def _subset(packed, indices):
 
 
 class PaperEnsemble:
+    paper_7944_ensemble = True
+
     def __init__(self, members, calibrator, reports):
         self.members = tuple(members)
         self.calibrator = calibrator

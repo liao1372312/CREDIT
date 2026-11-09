@@ -45,6 +45,7 @@ class PaperProtocolTests(unittest.TestCase):
         selector.factory = CatalogFactory.__new__(CatalogFactory)
         selector.factory.attempt_index = 2
         selector.factory.catalogs = {guard: () for guard in selector.mixture}
+        selector.models = (type("FrozenEnsemble", (), {"paper_7944_ensemble": True})(),)
         calls, frozen = [], []
 
         def simulated_switch(incumbent, finalists, **kwargs):

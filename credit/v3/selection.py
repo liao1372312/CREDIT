@@ -265,6 +265,9 @@ class BankSelector:
                 self.factory.attempt_index != attempt_index or
                 set(self.factory.catalogs) != set(self.mixture)):
             raise ValueError("registered certification requires matching frozen guard catalogs")
+        if (len(self.models) != 1 or
+                not getattr(self.models[0], "paper_7944_ensemble", False)):
+            raise ValueError("registered certification requires the calibrated five-member ensemble")
         if (self.capacity != PAPER_7944.capacity_tokens or
                 not np.isclose(self.radius, PAPER_7944.mixture_l1_radius) or
                 not np.isclose(self.cost_penalty, PAPER_7944.storage_penalty_per_token)):
