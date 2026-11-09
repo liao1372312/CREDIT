@@ -121,6 +121,7 @@ def run_registered(inputs: RegisteredInputs) -> dict:
     ensemble = fit_paper_ensemble(inputs.memories, inputs.training, inputs.validation,
                                   inputs.calibration, source_group=inputs.source_group,
                                   feature_encoder=inputs.feature_encoder)
+    ensemble.save(inputs.output_directory / "frozen_ensemble.pt")
     retriever = PaperRetriever(inputs.memories, inputs.memory_embeddings)
     factory = CatalogFactory(inputs.catalogs, seed=inputs.seed,
                              attempt_index=inputs.attempt_index,

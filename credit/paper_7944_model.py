@@ -6,7 +6,10 @@ experimental labels or claims measured effectiveness.
 """
 from __future__ import annotations
 
+import os
 from copy import deepcopy
+from itertools import combinations
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -51,10 +54,20 @@ class PaperOutcomeModel(OutcomeModel):
                 set(getattr(feature_encoder, "used_fields", ())) !=
                 self.REQUIRED_PREEXECUTION_FIELDS):
             raise ValueError("registered model needs a frozen feature encoder with provenance")
-        super().__init__(memories, training_contexts, seed=seed)
+        self.memories = tuple(memories)
+        if len({memory.uid for memory in self.memories}) != len(self.memories):
+            raise ValueError("paper memory IDs must be unique")
+        self.roles = {key: i for i, key in enumerate(sorted({
+            node.role.key for context in training_contexts for node in context.nodes}))}
+        self.pairs = tuple(combinations(range(len(self.memories)), 2))
+        torch.manual_seed(seed)
         self.feature_encoder = feature_encoder
         self.heads = PaperHeads(len(self.roles), feature_encoder.feature_size,
                                 feature_encoder.memory_size)
+        self.calibrator = None
+        self.fit_report = {}
+        self.support = {}
+        self.training_ids = set()
 
     def _pack(self, items):
         packed = self.feature_encoder.pack(items, self.memories, self.roles, self.pairs)
@@ -73,6 +86,9 @@ class PaperOutcomeModel(OutcomeModel):
         if torch.any(gate_indices < 0) or torch.any(gate_indices >= max(1, len(self.roles)) * 2):
             raise ValueError("pair gate index is outside the registered role table")
         return packed
+
+    def save(self, path):
+        raise RuntimeError("save the frozen five-member PaperEnsemble instead")
 
 
 def _observations(model: OutcomeModel, episodes):
@@ -110,6 +126,27 @@ class PaperEnsemble:
         raw = np.mean([member.predict_many(items, calibrated=False)
                        for member in self.members], axis=0)
         return self.calibrator.predict(raw)
+
+    def save(self, path: str | Path) -> Path:
+        """Freeze weights and calibration without pickling model objects."""
+        destination = Path(path)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        payload = {
+            "paper_7944_ensemble": True,
+            "feature_fingerprint": self.fit_report["feature_fingerprint"],
+            "members": [{"weights": member.heads.state_dict(),
+                         "roles": member.roles,
+                         "memory_ids": [memory.uid for memory in member.memories]}
+                        for member in self.members],
+            "calibration_x": self.calibrator.X_thresholds_,
+            "calibration_y": self.calibrator.y_thresholds_,
+            "fit_report": self.fit_report,
+        }
+        with destination.open("xb") as handle:
+            torch.save(payload, handle)
+            handle.flush()
+            os.fsync(handle.fileno())
+        return destination
 
 
 def fit_paper_ensemble(memories, training, validation, calibration, *, source_group,
