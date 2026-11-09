@@ -2,7 +2,7 @@
 import unittest
 
 from credit.paper_7944_protocol import (AttemptBook, CatalogFactory, PAPER_7944,
-                                        registered_halving)
+                                        registered_halving, validate_task_splits)
 from credit.v3.drift import transfer_level
 from credit.v3.inference import certify_registered, ppi
 from credit.v3.selection import BankSelector
@@ -16,6 +16,20 @@ class PaperProtocolTests(unittest.TestCase):
         self.assertEqual([w["test_task_ids"] for w in manifest["workloads"]], [80, 70, 25])
         self.assertEqual([w["prediction_draws_per_guard"] for w in manifest["workloads"]],
                          [2000, 4000, 3000])
+        splits = {}
+        for workload in PAPER_7944.workloads:
+            offset, parts = 0, {}
+            for part, count in (("source", workload.source_task_ids),
+                                ("development", workload.development_task_ids),
+                                ("certification", workload.certification_task_ids),
+                                ("test", workload.test_task_ids)):
+                parts[part] = list(range(offset, offset + count))
+                offset += count
+            splits[workload.name] = parts
+        validate_task_splits(splits)
+        splits["Retail"]["test"].pop()
+        with self.assertRaises(ValueError):
+            validate_task_splits(splits)
 
     def test_lifetime_error_spending_and_guard(self):
         estimates = {"protected": ppi([0.2] * 200, [0.0] * 200, [0.0] * 2000)}

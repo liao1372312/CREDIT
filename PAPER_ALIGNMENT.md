@@ -13,3 +13,5 @@ Implemented in this repository:
 The older `python -m credit.v3` entry point is a local synthetic experiment, not the paper's three-workload run. The public ToolSandbox CV20 driver likewise uses a different population. Neither should be used to regenerate the paper's tables.
 
 Still required for full experimental reproduction: the exact 2,000-episode ToolSandbox, Retail, and Airline execution harnesses; frozen actor/simulator/embedding calls and benchmark revisions; complete candidate/incumbent and certification records; request-level cost ledgers; and a verifier mapping each paper table cell to those records. This repository does not contain those measurements. No reported success rate or cost was synthesized from the protocol code.
+
+The bundled `datasets/tau_original_credit_pool_v2/split_manifest.json` is historical input, not the paper split: its Retail/Airline test sets contain 30/9 task IDs, whereas the paper registers 70/25. The exact paper task IDs and source-group assignments are needed before a paper-aligned run can be executed.

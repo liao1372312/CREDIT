@@ -18,7 +18,11 @@ from .v3.types import Context
 @dataclass(frozen=True)
 class Workload:
     name: str
+    source_task_ids: int
+    development_task_ids: int
+    certification_task_ids: int
     test_task_ids: int
+    test_source_groups: int
     test_episodes: int
     protected_guards: int
     prediction_draws_per_guard: int
@@ -63,9 +67,9 @@ class PaperProtocol:
     toolsandbox_commit: str = "165848b"
     tau_bench_commit: str = "59a200c6d575d595120f1cb70fea53cef0632f6b"
     workloads: tuple[Workload, ...] = (
-        Workload("ToolSandbox", 80, 2000, 6, 2000),
-        Workload("Retail", 70, 2000, 10, 4000),
-        Workload("Airline", 25, 2000, 7, 3000),
+        Workload("ToolSandbox", 24, 16, 6, 80, 30, 2000, 6, 2000),
+        Workload("Retail", 25, 10, 10, 70, 22, 2000, 10, 4000),
+        Workload("Airline", 12, 6, 7, 25, 15, 2000, 7, 3000),
     )
 
     def validate(self) -> None:
@@ -93,6 +97,23 @@ class PaperProtocol:
 
 
 PAPER_7944 = PaperProtocol()
+
+
+def validate_task_splits(splits: dict[str, dict[str, list]]) -> None:
+    """Reject historical task manifests with different paper populations."""
+    if set(splits) != {w.name for w in PAPER_7944.workloads}:
+        raise ValueError("all three registered workloads are required")
+    for spec in PAPER_7944.workloads:
+        rows = splits[spec.name]
+        expected = {"source": spec.source_task_ids,
+                    "development": spec.development_task_ids,
+                    "certification": spec.certification_task_ids,
+                    "test": spec.test_task_ids}
+        if set(rows) != set(expected) or any(len(rows[part]) != count
+                                              for part, count in expected.items()):
+            raise ValueError(f"{spec.name} task split sizes differ from paper 7944")
+        if len(set().union(*(set(rows[part]) for part in expected))) != sum(expected.values()):
+            raise ValueError(f"{spec.name} task IDs overlap across splits")
 
 
 def attempt_alpha(attempt_index: int) -> float:
