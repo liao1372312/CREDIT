@@ -23,6 +23,8 @@ class Ledger:
     excluded: dict[str, int] = field(default_factory=dict)
     unknown: dict[str, int] = field(default_factory=dict)
     records: list = field(default_factory=list)
+    request_ledger: object | None = None
+    require_request_ids: bool = False
 
     def remaining(self, phase):
         return self.limits.get(phase, 0) - self.episodes.get(phase, 0)
@@ -35,6 +37,12 @@ class Ledger:
         self.excluded[phase] = self.excluded.get(phase, 0) + int(not episode.replay_valid)
         self.unknown[phase] = self.unknown.get(phase, 0) + int(episode.verified is None)
         self.records.append({"phase": phase, "episode": episode})
+        if self.require_request_ids:
+            ids = episode.request_ids
+            if episode.calls < 1 or len(ids) != episode.calls or len(set(ids)) != len(ids):
+                raise ValueError("every physical call requires one unique request ID")
+            if self.request_ledger is None or any(uid not in self.request_ledger for uid in ids):
+                raise ValueError("physical request is absent from the request ledger")
 
     def execute(self, phase, executor, context, exposure, *, slots=None):
         if self.remaining(phase) < 1:
@@ -241,7 +249,7 @@ class BankSelector:
                 "fresh_certification": True, "labeled_episodes_per_stratum_bank": certification_n}
 
     def switch_registered(self, incumbent, finalist, *, workload, attempt_index,
-                          freeze, pilot_n=100):
+                          residual_weights, freeze):
         """Execute paper 7944's single-finalist, spent-alpha switch attempt.
 
         ``freeze`` persists the registered candidate, target, predictions, and
@@ -250,6 +258,7 @@ class BankSelector:
         including a budget-abandoned attempt.
         """
         from credit.paper_7944_protocol import CatalogFactory, PAPER_7944, attempt_alpha
+        from credit.paper_7944_runtime import PaperRetriever, PhysicalRequestLedger
 
         if not callable(freeze):
             raise ValueError("a persistent pre-certification freeze callback is required")
@@ -268,6 +277,11 @@ class BankSelector:
         if (len(self.models) != 1 or
                 not getattr(self.models[0], "paper_7944_ensemble", False)):
             raise ValueError("registered certification requires the calibrated five-member ensemble")
+        if not isinstance(self.retrieve, PaperRetriever) or not self.retrieve.verify_tokens:
+            raise ValueError("registered certification requires frozen dense retrieval")
+        if (not isinstance(self.ledger.request_ledger, PhysicalRequestLedger) or
+                not self.ledger.require_request_ids):
+            raise ValueError("registered certification requires a physical request ledger")
         if (self.capacity != PAPER_7944.capacity_tokens or
                 not np.isclose(self.radius, PAPER_7944.mixture_l1_radius) or
                 not np.isclose(self.cost_penalty, PAPER_7944.storage_penalty_per_token)):
@@ -277,18 +291,60 @@ class BankSelector:
             raise ValueError("freeze exactly one distinct finalist")
         if bank_cost(finalist, self.memories) > self.capacity:
             raise ValueError("finalist exceeds registered storage capacity")
+        incumbent = tuple(sorted(incumbent))
+        if bank_cost(incumbent, self.memories) > self.capacity:
+            raise ValueError("incumbent exceeds registered storage capacity")
+        if (set(residual_weights) != set(self.mixture) or
+                any(not np.isfinite(value) or not 0 <= value <= 1
+                    for value in residual_weights.values())):
+            raise ValueError("each guard needs one development-frozen residual weight")
+        if any(residual_weights[k] != 0 for k in self.mixture
+               if k not in self.transported_strata):
+            raise ValueError("untransported guards require zero prediction weight")
         alpha_t = attempt_alpha(attempt_index)
-
-        def registered_freeze(record):
-            freeze({**record, "workload": workload, "attempt_index": attempt_index,
-                    "attempt_alpha": alpha_t, "paper_protocol": PAPER_7944.manifest()})
-
-        result = self.switch(incumbent, [finalist], pilot_n=pilot_n,
-                             certification_n=PAPER_7944.fresh_pairs_per_guard,
-                             unlabeled_n=spec.prediction_draws_per_guard,
-                             alpha1=alpha_t / 2, alpha2=alpha_t / 2,
-                             margin=PAPER_7944.noninferiority_margin,
-                             method="normal", minimum_n=PAPER_7944.fresh_pairs_per_guard,
-                             freeze=registered_freeze)
-        return {**result, "workload": workload, "attempt_index": attempt_index,
+        banks = (incumbent, finalist)
+        required = PAPER_7944.fresh_pairs_per_guard * len(banks) * len(self.mixture)
+        if required > self.ledger.remaining("certification"):
+            return {"bank": incumbent, "switched": False,
+                    "reason": "insufficient certification budget", "certificates": [],
+                    "workload": workload, "attempt_index": attempt_index,
+                    "attempt_alpha": alpha_t, "registered_single_finalist": True}
+        labeled = self.contexts("certification", PAPER_7944.fresh_pairs_per_guard)
+        unlabeled = self.contexts("certification-unlabeled",
+                                  spec.prediction_draws_per_guard)
+        predictions = {bank: {guard: {
+            "labeled": self.predictions(labeled[guard], bank),
+            "unlabeled": self.predictions(unlabeled[guard], bank)}
+            for guard in self.mixture} for bank in banks}
+        freeze({"incumbent": incumbent, "finalists": [finalist],
+                "mixture": dict(self.mixture), "residual_weights": dict(residual_weights),
+                "workload": workload, "attempt_index": attempt_index,
+                "attempt_alpha": alpha_t, "paper_protocol": PAPER_7944.manifest(),
+                "certification_contexts": {k: [asdict(c) for c in rows]
+                                           for k, rows in labeled.items()},
+                "prediction_hash_input": {"|".join(bank): {
+                    guard: {phase: values.tolist() for phase, values in phases.items()}
+                    for guard, phases in predictions[bank].items()} for bank in banks},
+                "model_report": [model.fit_report for model in self.models]})
+        real = self._executions("certification", labeled, banks)
+        estimates = {guard: ppi(real[finalist][guard] - real[incumbent][guard],
+                                predictions[finalist][guard]["labeled"] -
+                                predictions[incumbent][guard]["labeled"],
+                                predictions[finalist][guard]["unlabeled"] -
+                                predictions[incumbent][guard]["unlabeled"],
+                                residual_weights[guard]) for guard in self.mixture}
+        from .inference import certify_registered
+        certificate = certify_registered(estimates, self.mixture, attempt_index=attempt_index,
+                                         cost_difference=bank_cost(finalist, self.memories) -
+                                         bank_cost(incumbent, self.memories),
+                                         cost_penalty=self.cost_penalty,
+                                         margin=PAPER_7944.noninferiority_margin,
+                                         method="normal")
+        certificate.update(bank=finalist,
+                           estimates={guard: asdict(value) for guard, value in estimates.items()})
+        return {"bank": finalist if certificate["passed"] else incumbent,
+                "switched": certificate["passed"], "certificates": [certificate],
+                "finalist_count": 1, "fresh_certification": True,
+                "labeled_episodes_per_stratum_bank": PAPER_7944.fresh_pairs_per_guard,
+                "workload": workload, "attempt_index": attempt_index,
                 "attempt_alpha": alpha_t, "registered_single_finalist": True}

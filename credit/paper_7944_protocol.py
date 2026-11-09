@@ -5,10 +5,10 @@ paper result requires matching execution records and a physical-request ledger.
 """
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, replace
-from hashlib import sha256
 import json
 import math
+from dataclasses import asdict, dataclass, replace
+from hashlib import sha256
 from pathlib import Path
 from random import Random
 
@@ -116,6 +116,60 @@ def validate_task_splits(splits: dict[str, dict[str, list]]) -> None:
             raise ValueError(f"{spec.name} task IDs overlap across splits")
 
 
+def validate_source_groups(splits: dict[str, dict[str, list]],
+                           groups_by_task: dict[str, dict[str, str]]) -> None:
+    """Require disjoint source families and the paper's test-family counts."""
+    validate_task_splits(splits)
+    if set(groups_by_task) != set(splits):
+        raise ValueError("source-group mapping must cover all three workloads")
+    for spec in PAPER_7944.workloads:
+        rows, groups = splits[spec.name], groups_by_task[spec.name]
+        task_ids = set().union(*(set(values) for values in rows.values()))
+        if set(groups) != task_ids or any(not isinstance(value, str) or not value
+                                          for value in groups.values()):
+            raise ValueError(f"{spec.name} source groups must cover every task ID")
+        part_groups = {part: {groups[task] for task in tasks}
+                       for part, tasks in rows.items()}
+        if len(set().union(*part_groups.values())) != sum(map(len, part_groups.values())):
+            raise ValueError(f"{spec.name} source groups overlap across splits")
+        if len(part_groups["test"]) != spec.test_source_groups:
+            raise ValueError(f"{spec.name} test source-group count differs from paper")
+
+
+def validate_final_test(workload: str, contexts: tuple[Context, ...],
+                        splits: dict[str, dict[str, list]],
+                        groups_by_task: dict[str, dict[str, str]],
+                        tool_sandbox_task_kinds: dict[str, str] | None = None) -> None:
+    """Reject final-test runs outside the preregistered tasks and families."""
+    validate_source_groups(splits, groups_by_task)
+    spec = next((item for item in PAPER_7944.workloads if item.name == workload), None)
+    if spec is None or len(contexts) != spec.test_episodes:
+        raise ValueError("registered final test requires exactly 2,000 episodes")
+    allowed = set(splits[workload]["test"])
+    if (len({row.uid for row in contexts}) != len(contexts) or
+            len({row.seed for row in contexts}) != len(contexts) or
+            any(row.task_id not in allowed or
+                row.source_group != groups_by_task[workload][row.task_id]
+                for row in contexts)):
+        raise ValueError("final-test episode identities or source families are invalid")
+    if {row.task_id for row in contexts} != allowed:
+        raise ValueError("not every registered test task was represented")
+    repetitions = {task: sum(row.task_id == task for row in contexts) for task in allowed}
+    expected_repetitions = {
+        "ToolSandbox": [25] * 80,
+        "Retail": [28] * 30 + [29] * 40,
+        "Airline": [80] * 25,
+    }
+    if sorted(repetitions.values()) != sorted(expected_repetitions[workload]):
+        raise ValueError("registered final-test task repetition schedule differs")
+    if workload == "ToolSandbox" and (
+            tool_sandbox_task_kinds is None or
+            set(tool_sandbox_task_kinds) != allowed or
+            list(tool_sandbox_task_kinds.values()).count("new_workflow") != 44 or
+            list(tool_sandbox_task_kinds.values()).count("changed_contract") != 36):
+        raise ValueError("ToolSandbox requires 44 new-workflow and 36 changed-contract tasks")
+
+
 def attempt_alpha(attempt_index: int) -> float:
     if not isinstance(attempt_index, int) or attempt_index < 1:
         raise ValueError("attempt_index must be a positive integer")
@@ -141,6 +195,9 @@ class CatalogFactory:
             if len({row.uid for row in rows}) != len(rows) or any(
                     row.stratum != guard for row in rows):
                 raise ValueError("catalog context IDs and guard labels are invalid")
+            if any(row.initial_user_text is None or row.initial_embedding is None
+                   for row in rows):
+                raise ValueError("paper catalogs require cached initial messages and embeddings")
         self.catalogs = {guard: tuple(rows) for guard, rows in catalogs.items()}
         self.seed = seed
         self.attempt_index = attempt_index
@@ -153,7 +210,7 @@ class CatalogFactory:
             if self.development_factory is None:
                 raise ValueError("a separate development factory is required")
             return self.development_factory(guard, phase, index)
-        key = f"{self.seed}|{self.attempt_index}|{guard}|{phase}|{index}".encode("utf-8")
+        key = f"{self.seed}|{self.attempt_index}|{guard}|{phase}|{index}".encode()
         draw_seed = int.from_bytes(sha256(key).digest()[:8], "big")
         chosen = Random(draw_seed).randrange(PAPER_7944.catalog_contexts_per_guard)
         source = self.catalogs[guard][chosen]
@@ -170,11 +227,11 @@ class AttemptBook:
             raise ValueError("initiated attempt count must be nonnegative")
         self.initiated = initiated
 
-    def attempt(self, selector, incumbent, finalist, *, workload, freeze, pilot_n=100):
+    def attempt(self, selector, incumbent, finalist, *, workload, residual_weights, freeze):
         self.initiated += 1
         return selector.switch_registered(incumbent, finalist, workload=workload,
                                           attempt_index=self.initiated, freeze=freeze,
-                                          pilot_n=pilot_n)
+                                          residual_weights=residual_weights)
 
 
 def registered_halving(candidates, acquire_pairs, rank):

@@ -75,6 +75,10 @@ class Context:
     edges: tuple[tuple[str, str], ...]
     seed: int
     initial_state: int = 0
+    initial_user_text: str | None = None
+    initial_embedding: tuple[float, ...] | None = None
+    task_id: str | None = None
+    source_group: str | None = None
 
     def __post_init__(self):
         positions = {node.uid: i for i, node in enumerate(self.nodes)}
@@ -133,6 +137,7 @@ class Episode:
     assignment_probability: float | None = None
     events: tuple[dict, ...] = ()
     reused_calls: int = 0
+    request_ids: tuple[str, ...] = ()
 
     @property
     def outcome(self) -> int:
