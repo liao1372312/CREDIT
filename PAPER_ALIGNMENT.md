@@ -22,4 +22,7 @@ Still required for full experimental reproduction: the exact task IDs and source
 
 The bundled `datasets/tau_original_credit_pool_v2/split_manifest.json` is historical input, not the paper split: its Retail/Airline test sets contain 30/9 task IDs, whereas the paper registers 70/25. The exact paper task IDs and source-group assignments are needed before a paper-aligned run can be executed.
 
+The anonymous code snapshot linked in the PDF was checked on 2026-11-09. Its dataset directory contains only the same historical `tau_original_credit_pool_v2` pool; it does not supply the missing registered task/source-group manifest or raw paper execution records.
+
 The local `vendor/tau-bench` checkout matches the registered commit. The pre-existing `vendor/ToolSandbox` checkout does not; a separate local archive of upstream commit `165848b9a78cead7ca7fe7c89c688b58e6501219` is available under `vendor/ToolSandbox-paper`. The archive is not bundled in the public repository.
+
