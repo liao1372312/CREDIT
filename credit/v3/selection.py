@@ -239,3 +239,53 @@ class BankSelector:
         return {"bank": best["bank"] if best else incumbent, "switched": bool(best),
                 "certificates": certificates, "finalist_count": len(finalists),
                 "fresh_certification": True, "labeled_episodes_per_stratum_bank": certification_n}
+
+    def switch_registered(self, incumbent, finalist, *, workload, attempt_index,
+                          freeze, pilot_n=100):
+        """Execute paper 7944's single-finalist, spent-alpha switch attempt.
+
+        ``freeze`` persists the registered candidate, target, predictions, and
+        sampling plan before any certification outcomes are obtained. The
+        caller must advance ``attempt_index`` for every initiated attempt,
+        including a budget-abandoned attempt.
+        """
+        from credit.paper_7944_protocol import CatalogFactory, PAPER_7944, attempt_alpha
+
+        if not callable(freeze):
+            raise ValueError("a persistent pre-certification freeze callback is required")
+        attempt_alpha(attempt_index)
+        spec = next((w for w in PAPER_7944.workloads if w.name == workload), None)
+        if spec is None:
+            raise ValueError("unknown registered workload")
+        if len(self.mixture) != spec.protected_guards or any(
+                not np.isclose(weight, 1 / spec.protected_guards)
+                for weight in self.mixture.values()):
+            raise ValueError("registered guards require uniform target weights")
+        if (not isinstance(self.factory, CatalogFactory) or
+                self.factory.attempt_index != attempt_index or
+                set(self.factory.catalogs) != set(self.mixture)):
+            raise ValueError("registered certification requires matching frozen guard catalogs")
+        if (self.capacity != PAPER_7944.capacity_tokens or
+                not np.isclose(self.radius, PAPER_7944.mixture_l1_radius) or
+                not np.isclose(self.cost_penalty, PAPER_7944.storage_penalty_per_token)):
+            raise ValueError("selector settings differ from the registered paper protocol")
+        finalist = tuple(sorted(finalist))
+        if not finalist or finalist == tuple(sorted(incumbent)):
+            raise ValueError("freeze exactly one distinct finalist")
+        if bank_cost(finalist, self.memories) > self.capacity:
+            raise ValueError("finalist exceeds registered storage capacity")
+        alpha_t = attempt_alpha(attempt_index)
+
+        def registered_freeze(record):
+            freeze({**record, "workload": workload, "attempt_index": attempt_index,
+                    "attempt_alpha": alpha_t, "paper_protocol": PAPER_7944.manifest()})
+
+        result = self.switch(incumbent, [finalist], pilot_n=pilot_n,
+                             certification_n=PAPER_7944.fresh_pairs_per_guard,
+                             unlabeled_n=spec.prediction_draws_per_guard,
+                             alpha1=alpha_t / 2, alpha2=alpha_t / 2,
+                             margin=PAPER_7944.noninferiority_margin,
+                             method="normal", minimum_n=PAPER_7944.fresh_pairs_per_guard,
+                             freeze=registered_freeze)
+        return {**result, "workload": workload, "attempt_index": attempt_index,
+                "attempt_alpha": alpha_t, "registered_single_finalist": True}

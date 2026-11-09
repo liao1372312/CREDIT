@@ -43,7 +43,7 @@ class ProbeEvidence:
 
 
 def transfer_level(source: Role | None, target: Role, version: str, *, changed: int,
-                   fixtures: int, support: int, delta0=0.1, n_min=50, n_support=12,
+                   fixtures: int, support: int, delta0=0.05, n_min=80, n_support=30,
                    alpha=0.05, identical_pinned_version=False):
     if not 0 <= delta0 <= 1 or n_min < 1 or n_support < 1 or support < 0:
         raise ValueError("invalid transfer thresholds")

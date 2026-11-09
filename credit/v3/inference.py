@@ -111,6 +111,26 @@ def certify(estimates, mixture, *, cost_difference=0.0, cost_penalty=0.0,
             "noninferiority_margin": margin}
 
 
+def certify_registered(estimates, mixture, *, attempt_index, cost_difference=0.0,
+                       cost_penalty=1.25e-5, margin=0.05, method="normal"):
+    """Paper 7944's one-finalist test with lifetime alpha spending.
+
+    The caller freezes a single candidate, target mixture, model, residual
+    weights, and sampling plan before obtaining the estimates. Every initiated
+    attempt consumes an index, including rejected or budget-abandoned attempts.
+    """
+    from credit.paper_7944_protocol import PAPER_7944, attempt_alpha
+
+    alpha_t = attempt_alpha(attempt_index)
+    result = certify(estimates, mixture, cost_difference=cost_difference,
+                     cost_penalty=cost_penalty, finalists=1,
+                     alpha1=alpha_t / 2, alpha2=alpha_t / 2,
+                     margin=margin, method=method, minimum_n=200)
+    return {**result, "attempt_index": attempt_index,
+            "lifetime_alpha": PAPER_7944.lifetime_error, "attempt_alpha": alpha_t,
+            "candidate_count": 1}
+
+
 def worst_mixture(values, weights, radius=0.2):
     """Prop. robust(a), mass moved from largest value to a minimum-value cell."""
     values, weights = np.asarray(values, dtype=float), np.asarray(weights, dtype=float).copy()

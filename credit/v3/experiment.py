@@ -93,8 +93,8 @@ def run(args):
     source["credit/stateful.py"] = digest("credit/stateful.py")
     for p in source:
         (output / "source" / Path(p).name).write_bytes(Path(p).read_bytes())
-    paper = Path("CREDIT_WWW2027_v3.tex")
-    protocol = {"paper": str(paper), "paper_sha256": digest(paper), "source_sha256": source,
+    protocol = {"experiment_family": "legacy bounded local simulation",
+                "paper_7944_protocol": False, "source_sha256": source,
                 "config": {k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},
                 "primary_endpoint": "all required node postconditions AND submitted state",
                 "unknown_is_failure": True, "strata": [f"{f}/{e}" for f in FAMILIES for e in ("source", "target")],
@@ -225,7 +225,9 @@ def run(args):
     counts.update(differential_fixture_calls=sum(r["api_calls"] for r in fixtures),
                   total_cycle_units=counts["total_executed_episodes"] + sum(r["api_calls"] for r in fixtures))
     write(output / "costs.json", counts)
-    summary = {"paper": str(paper), "switched": switch["switched"], "bank": switch["bank"],
+    summary = {"experiment_family": "legacy bounded local simulation",
+               "paper_7944_protocol": False,
+               "switched": switch["switched"], "bank": switch["bank"],
                "test_macro_vsr": {"|".join(b): float(np.mean([v.mean() for v in rows.values()]))
                                   for b, rows in test_values.items()},
                "transfer_levels": dict(Counter(p.level.value for p in evidence)), "costs": counts,
